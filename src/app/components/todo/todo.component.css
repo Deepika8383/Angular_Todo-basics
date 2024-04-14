@@ -1,0 +1,119 @@
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header h1 {
+    text-align: center;
+    color: #333;
+}
+
+.todos {
+    margin-top: 20px;
+}
+
+.no-todos {
+    text-align: center;
+    color: #666;
+    margin-top: 10px;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.todo:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.todo .id {
+    flex: 0 0 50px;
+}
+
+.todo .content {
+    flex: 1;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.todo.done .content {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.todo-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.todo-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1db9e4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.todo-submit:hover {
+    background-color: #3aa90e;
+}
+
+.delete {
+    margin-left: auto;
+    padding: 5px 10px;
+    background-color: #38b3dc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+.edit {
+    margin-left: auto;
+    padding: 5px 10px;
+    background-color: #38b3dc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+.delete:hover {
+    background-color: #821869;
+}
+
+.edit:hover {
+    background-color: #821869;
+}
+/* Add this CSS to your existing styles */
+
+.todo-checkbox {
+    margin-right: 10px;
+}
+
+.todo.completed .content {
+    text-decoration: line-through;
+    color: #aaa;
+}
+/* Add this CSS to your existing styles */
+
+.todo .save {
+    display: none;
+}
