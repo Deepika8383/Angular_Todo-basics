@@ -1,4 +1,38 @@
-<div class="app">
+<div class="container">
+    <div class="app">
+        <header>
+            <h1 class="text-center">Angular Todo App</h1>
+        </header>
+        <div class="todos">
+            <form [formGroup]="todoForm" (ngSubmit)="addTodo()" class="form-inline">
+                <input
+                    type="text"
+                    formControlName="inputTodo"
+                    placeholder="Enter todo.."
+                    class="form-control"
+                />
+                <button type="submit" class="btn btn-primary">Add Todo</button>
+            </form>
+            <div *ngIf="todos.length === 0" class="no-todos text-center">
+                No todos yet. Add one now!
+            </div>
+            <div *ngFor="let todo of todos; let i = index;" class="todo panel panel-default">
+                <div [formGroup]="todoForm">
+                    <input type="checkbox" formControlName="completed" (change)="toggleDone(i)" class="checkbox">
+                    <div class="panel-body">
+                        <div class="content" *ngIf="!todo.editMode" [ngStyle]="{'text-decoration': todo.completed ? 'line-through' : 'none'}" (click)="toggleContent(i)">{{ todo.content }}</div>
+                        <input type="text" class="edit-input form-control" *ngIf="todo.editMode" formControlName="content">
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-primary edit" (click)="toggleEditMode(i)">{{ todo.editMode ? 'Save' : 'Edit' }}</button>
+                    <button class="btn btn-danger delete" (click)="deleteTodo(i)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="app">
     <header>
         <h1>Angular Todo App</h1>
     </header>
@@ -24,6 +58,6 @@
             <button class="delete" (click)="deleteTodo(i)">Remove</button>
         </div>
     </div>
-</div>
+</div> -->
 
  
